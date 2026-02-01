@@ -26,10 +26,12 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE=ghcr.io/${{ github.repository }}/traefik-cert-watcher:latest
+          REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$REPO/traefik-cert-watcher:latest
           docker build -t $IMAGE ./cmd/traefik-cert-watcher
 
       - name: Push Docker image
         run: |
-          IMAGE=ghcr.io/${{ github.repository }}/traefik-cert-watcher:latest
+          REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$REPO/traefik-cert-watcher:latest
           docker push $IMAGE
