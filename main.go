@@ -398,7 +398,7 @@ func writeCertFiles(provider, domain string, certPEM, keyPEM []byte) {
 	_ = os.MkdirAll(dir, 0755)
 
 	_ = atomicWriteFile(filepath.Join(dir, "fullchain.pem"), certPEM, 0644)
-	_ = atomicWriteFile(filepath.Join(dir, "privkey.pem"), keyPEM, 0600)
+	_ = atomicWriteFile(filepath.Join(dir, "privkey.pem"), keyPEM, 0640)
 }
 
 /* ==================== MATCHING ==================== */
