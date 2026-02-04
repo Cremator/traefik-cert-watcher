@@ -29,7 +29,7 @@ import (
 var (
 	traefikFile = flag.String("traefik-file", "/traefik/acme.json", "Traefik acme.json")
 	certDir     = flag.String("cert-dir", "/certs", "Certificate output dir")
-	dockerLabel = flag.String("docker-label", "traefik.acme.cert", "Container domain label")
+	dockerLabel = flag.String("docker-label", "traefik-cert-watcher.domain", "Container domain label")
 	stateFile   = flag.String("state-file", "/certs/app_state.json", "State file")
 )
 
