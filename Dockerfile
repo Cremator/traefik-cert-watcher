@@ -1,4 +1,4 @@
-FROM golang:1.25-alpine AS build-env
+FROM golang:1.26-alpine AS build-env
 
 WORKDIR /build
 
@@ -13,7 +13,7 @@ COPY main.go go.mod go.sum /build/
 RUN go version
 RUN go build
 
-FROM alpine:3
+FROM alpine:3.23
 
 COPY --from=build-env /build/traefik-cert-watcher /traefik-cert-watcher
 
